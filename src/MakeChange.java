@@ -22,6 +22,11 @@ public class MakeChange {
 	}
 	
 	
+	/*
+	 * Consider this as a back tracking solution, where at at node you have an option of choose either of the coin, hence array.lenght choices.
+	 * once that choice is made, the solution is nothing but recursion of that choice + C - choice.
+	 * But, here we are using the already computed sub-tree solution and not calcuating it again as we do in recursion.
+	 */
 	public static int getMinChangeRecursiveDP(int array[], int C){
 		calls++;
 		if(minChange.containsKey(C)){
@@ -36,7 +41,12 @@ public class MakeChange {
 		minChange.put(C, min);
 		return min;
 	}
-	
+
+	/*
+	 * This uses the incremental DP approach. To calculate MakeChange(C), all value upto C- max(input) should be filled.
+	 * consider minChange as a array which is filled from 2 to C.
+	 * Add every stage of i, we have an option to choose any of the coins and then use the already computer minChange(i -array[option]) value
+	 */
 	public static int getMinChangeIterativeDP(int array[], int C){
 		minChange.clear();
 		for(int i : array){
