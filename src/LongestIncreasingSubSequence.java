@@ -12,6 +12,7 @@ public class LongestIncreasingSubSequence {
 	/*
 	 * 
 	 * M(j) = max (M(i)) for all i < j and A[i] < A[j]
+	 * O(n^2) as we have to solve n sub problems, maximizing over n already solved problems
 	 */
 	
 	public static int longestIncreasingSubSequenceDP(int [] input){
