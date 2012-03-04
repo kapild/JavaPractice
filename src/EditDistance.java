@@ -7,7 +7,13 @@ public class EditDistance {
 		editDistance("ABC", "ABC");
 	}
 	
-	
+	/*
+	 * let edit[i][j] defines the mininum number of transformation required to transfor
+	 * left(0,i) to right(0,j)
+	 * thus edit[i][j]
+	 * = edit[i-1][j-1] if left(i) equals right(j)
+	 * else min of edit[i-1][j]+1, edit[i][j-1] + 1, edit[i-1][j-1] +1 
+	 * 	 */
 	public static void editDistance(String left, String right){
 		
 		
