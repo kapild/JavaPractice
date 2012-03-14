@@ -16,8 +16,10 @@ public class MakeChange {
 		}
 		System.out.println(getMinChangeRecursiveDP(array, 5));
 		System.out.println(calls);
-		System.out.println(getMinChangeRecursiveDP(array, 16));
+		calls = 0;
+		System.out.println(getMinChangeRecursiveDP(array, 12));
 		System.out.println(minChange);
+		System.out.println(calls);
 		
 	}
 	
@@ -52,13 +54,14 @@ public class MakeChange {
 		for(int i : array){
 			minChange.put(i, 1);
 		}
-		
+		calls=0;
 		for (int i = 2; i <=C ;i++){
 			if(minChange.containsKey(i)){
 				continue;
 			}
 			int min = Integer.MAX_VALUE;
 			for(int options = 0; options < array.length && array[options] < i ;options++){
+				calls++;
 				int x  = 1 + minChange.get(i - array[options]);
 				min = Math.min(min, x);
 			}
