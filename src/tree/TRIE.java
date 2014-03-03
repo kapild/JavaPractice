@@ -2,17 +2,28 @@ package tree;
 
 public class TRIE {
 
-    Character element;
-    TRIE[] nodes;
+    Node nodes[];
     boolean isLeaf;
 
     public TRIE() {
-        element = null;
+        nodes = new Node[26];
         isLeaf = true;
-        nodes = new TRIE[0];
     }
 
-    public void add(String element) {
+    public static class Node {
+
+        Character info;
+        Object child;
+
+    }
+
+    public void addElement(String element) {
+
+        for (int index = 0; index < element.length(); index++) {
+            Character ch = Character.toLowerCase(element.charAt(index));
+            nodes['a' - ch].info = ch;
+            // nodes[]
+        }
 
     }
 }

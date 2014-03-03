@@ -61,4 +61,20 @@ public class BinaryTree {
 
     }
 
+    public static BinaryTree search(int val, BinaryTree root) {
+        if (root == null) {
+            return null;
+        }
+
+        if (val == root.val) {
+            return root;
+        }
+        if (val < root.val) {
+            return search(val, root.left);
+        } else {
+            return search(val, root.right);
+        }
+
+    }
+
 }
