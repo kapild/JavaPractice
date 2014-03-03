@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import cards.data.DeckOfCards;
-import data.DeckOfNumbers;
+import cards.data.DeckOfNumbers;
 
 public class RunCards {
 

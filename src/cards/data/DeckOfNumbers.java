@@ -1,4 +1,4 @@
-package data;
+package cards.data;
 
 import java.util.Deque;
 import java.util.Iterator;
