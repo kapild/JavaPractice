@@ -1,0 +1,13 @@
+#!/bin/bash
+
+EXPECTED_ARGS=1
+if [ $# -ne $EXPECTED_ARGS ];
+then
+   echo "Usage: ./runShuffle noOfCards"
+   exit 1
+else
+  javac card/*.java data/*.java
+  java card.RunCards $1
+
+fi
+
